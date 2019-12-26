@@ -6,7 +6,5 @@ import okhttp3.ResponseBody
 interface LocalFetchFontFile {
     suspend fun fontFileExists(fontName: String) : Boolean
     suspend fun getFontFile(fontName: String) : FetchFontState
-    suspend fun saveFontFile(body: ResponseBody, fontName: String) : FetchFontState
-
-
+    suspend fun saveFontFile(byteArray: ByteArray, fontName: String) : FetchFontState
 }
