@@ -1,23 +1,34 @@
 package com.puzzle.bench.poc_download_fonts.data.local
 
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Environment
+import androidx.core.app.ActivityCompat
 import com.puzzle.bench.poc_download_fonts.domain.FetchFontState
+import com.puzzle.bench.poc_download_fonts.domain.FetchFontStatus
 import java.io.*
 
-class LocalFetchFontFileImpl : LocalFetchFontFile {
+class LocalFetchFontFileImpl(private var context: Context) : LocalFetchFontFile {
     override suspend fun fontFileExists(fontName: String): Boolean {
         val file = File(getFontPhatName(fontName))
         return file.exists()
     }
 
     override suspend fun getFontFile(fontName: String): FetchFontState {
+        if(!hasPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE))){
+            return FetchFontState(null, FetchFontStatus.MissingPermissions)
+        }
         val file = File(getFontPhatName(fontName))
         return FetchFontState(file)
     }
 
     override suspend fun saveFontFile(byteArray: ByteArray, fontName: String): FetchFontState {
+        if(!hasPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE))){
+            return FetchFontState(null, FetchFontStatus.MissingPermissions)
+        }
         writeToSD(byteArray, fontName)
-        return FetchFontState(null)
+        return FetchFontState(null, FetchFontStatus.NoError)
     }
 
     private fun writeToSD(byteArray: ByteArray, fontName: String): Boolean {
@@ -60,4 +71,9 @@ class LocalFetchFontFileImpl : LocalFetchFontFile {
     }
 
     private fun getFontPhatName(fontName: String) = "/sdcard/${fontName}"
+
+    private fun hasPermissions(permissions: Array<String>): Boolean =
+        permissions.all {
+            ActivityCompat.checkSelfPermission(context, it) == PackageManager.PERMISSION_GRANTED
+        }
 }
