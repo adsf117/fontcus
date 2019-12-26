@@ -11,7 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc566a09-6238-4c94-822e-fb5eb0629391" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -20,18 +19,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_stetho_stetho_1_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_stetho_stetho_1_5_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/LocalFetchFontFile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/LocalFetchFontFile.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/LocalFetchFontFileImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/LocalFetchFontFileImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/FetchFonstState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/FetchFonstState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFile.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFileImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFileImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +59,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="225">
+              <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+              <folding>
+                <element signature="e#58#898#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="62" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -85,11 +90,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFileImpl.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="521">
+              <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/FetchFonstState.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -109,6 +123,8 @@
     <findStrings>
       <find>openFileOutput</find>
       <find>targetsdkversion</find>
+      <find>repositoryFetchFontFile</find>
+      <find>error loading font</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,18 +164,20 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/Constants.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/MainActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/repository/FetchFonstState.kt" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/LocalFetchFontFile.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFileImpl.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/LocalFetchFontFileImpl.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/FetchFonstState.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFile.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFileImpl.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="115" />
-    <option name="y" value="86" />
+    <option name="x" value="169" />
+    <option name="y" value="124" />
     <option name="width" value="1677" />
     <option name="height" value="852" />
   </component>
@@ -175,6 +193,11 @@
             <path>
               <item name="POC-download-fonts" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="POC-download-fonts" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
             </path>
             <path>
               <item name="POC-download-fonts" type="1abcf292:AndroidViewProjectNode" />
@@ -220,6 +243,40 @@
               <item name="bench" type="462c0819:PsiDirectoryNode" />
               <item name="poc_download_fonts" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="POC-download-fonts" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="bench" type="462c0819:PsiDirectoryNode" />
+              <item name="poc_download_fonts" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="POC-download-fonts" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="bench" type="462c0819:PsiDirectoryNode" />
+              <item name="poc_download_fonts" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="remote" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="POC-download-fonts" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="puzzle" type="462c0819:PsiDirectoryNode" />
+              <item name="bench" type="462c0819:PsiDirectoryNode" />
+              <item name="poc_download_fonts" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="remote" type="462c0819:PsiDirectoryNode" />
+              <item name="retrofit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="POC-download-fonts" type="1abcf292:AndroidViewProjectNode" />
@@ -366,7 +423,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="115" y="86" width="1677" height="852" extended-state="0" />
+    <frame x="169" y="124" width="1677" height="852" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -426,15 +483,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt</url>
-          <line>32</line>
+          <line>38</line>
           <properties />
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt</url>
-          <line>44</line>
-          <properties />
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/LocalFetchFontFileImpl.kt</url>
@@ -444,7 +495,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFileImpl.kt</url>
-          <line>25</line>
+          <line>29</line>
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
@@ -517,29 +568,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFile.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="61" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/local/Constants.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/data/remote/RemoteFetchFontFileImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -590,17 +619,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="62" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFile.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="50" selection-start-column="50" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/FetchFonstState.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="85">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/domain/RepositoryFetchFontFileImpl.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="521">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/puzzle/bench/poc_download_fonts/presentation/SampleActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="52" column="13" lean-forward="true" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding>
+            <element signature="e#58#898#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
