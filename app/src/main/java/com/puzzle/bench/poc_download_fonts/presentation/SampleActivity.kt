@@ -49,16 +49,22 @@ class SampleActivity : AppCompatActivity(), CoroutineScope {
             val fontName = "Xtrusion%20(BRK).ttf"
 
             val fileRepo = repositoryFetchFontFile.getFontFile(fontName)
-            if (fileRepo.error == FetchFontStatus.NoError) {
-                try {
-                    // Display font from SD
-                    val typeFace = Typeface.createFromFile(fileRepo.fontFile)
-                    MyText.typeface = typeFace
-                } catch (e: Exception) {
-                    Log.e("Error loading font: ", e.message)
+            when(fileRepo.error){
+                is FetchFontStatus.NoError -> {
+                    try {
+                        // Display font from SD
+                        val typeFace = Typeface.createFromFile(fileRepo.fontFile)
+                        MyText.typeface = typeFace
+                    } catch (e: Exception) {
+                        Log.e("Error loading font: ", e.message)
+                    }
                 }
-            } else if (fileRepo.error == FetchFontStatus.MissingPermissions) {
-                Toast.makeText(applicationContext, "missing permissions", Toast.LENGTH_SHORT).show()
+                is FetchFontStatus.MissingPermissions -> {
+                    Toast.makeText(applicationContext, "missing permissions", Toast.LENGTH_SHORT).show()
+                }
+                is FetchFontStatus.LowDiskSpace -> {
+                    Toast.makeText(applicationContext, "low space in disck", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

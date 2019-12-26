@@ -19,8 +19,12 @@ class RepositoryFetchFontFileImpl constructor(
         } else {
             val response = remoteDownloadFontFile.downloadFontsFile(fontName)
             response.responseBody?.let { responseBody ->
-                localFetchFontFile.saveFontFile(responseBody.bytes(), fontName)
-                fetchFontState = localFetchFontFile.getFontFile(fontName)
+                val status = localFetchFontFile.saveFontFile(responseBody.bytes(), fontName)
+                fetchFontState = if (status.error == FetchFontStatus.LowDiskSpace) {
+                    status
+                } else {
+                    localFetchFontFile.getFontFile(fontName)
+                }
             }
         }
         return@withContext fetchFontState
