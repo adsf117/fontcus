@@ -6,32 +6,21 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.puzzle.bench.poc_download_fonts.R
-import com.puzzle.bench.poc_download_fonts.data.local.LocalFetchFontFileImpl
-import com.puzzle.bench.poc_download_fonts.data.remote.RemoteFetchFontFileImpl
-import com.puzzle.bench.poc_download_fonts.data.remote.retrofit.RetrofitCliente
-import com.puzzle.bench.poc_download_fonts.domain.FetchFontStatus
-import com.puzzle.bench.poc_download_fonts.domain.RepositoryFetchFontFile
-import com.puzzle.bench.poc_download_fonts.domain.RepositoryFetchFontFileImpl
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.MyText
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.channels.consume
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 
 class SampleActivity : AppCompatActivity(), CoroutineScope {
 
-    private lateinit var mJob: Job
+    private val mJob by lazy { Job() }
+
     override val coroutineContext: CoroutineContext
         get() = mJob + Dispatchers.Main
-
-    private val repositoryFetchFontFile: RepositoryFetchFontFile by lazy {
-        RepositoryFetchFontFileImpl(
-            RemoteFetchFontFileImpl(RetrofitCliente().makeServiceDownloadFontsAPI()),
-            LocalFetchFontFileImpl(applicationContext)
-        ) //TODO move this into a Service Locator
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,32 +29,27 @@ class SampleActivity : AppCompatActivity(), CoroutineScope {
 
     override fun onResume() {
         super.onResume()
-        loadFont()
+        launch {
+              (application as SampleApplication).channel.consume {
+                val typeFace = this.receive()
+                  applyFont(typeFace)
+              }
+        }
+
     }
 
     private fun loadFont() {
-        mJob = Job()
         launch {
-            val fontName = "Xtrusion%20(BRK).ttf"
-
-            val fileRepo = repositoryFetchFontFile.getFontFile(fontName)
-            when(fileRepo.error){
-                is FetchFontStatus.NoError -> {
-                    try {
-                        // Display font from SD
-                        val typeFace = Typeface.createFromFile(fileRepo.fontFile)
-                        MyText.typeface = typeFace
-                    } catch (e: Exception) {
-                        Log.e("Error loading font: ", e.message)
-                    }
-                }
-                is FetchFontStatus.MissingPermissions -> {
-                    Toast.makeText(applicationContext, "missing permissions", Toast.LENGTH_SHORT).show()
-                }
-                is FetchFontStatus.LowDiskSpace -> {
-                    Toast.makeText(applicationContext, "low space in disck", Toast.LENGTH_SHORT).show()
-                }
+            val result =  launchFonts(applicationContext,MyText,"Xtrusion%20(BRK).ttf")
+            when(result.await()){
+                LoadFontState.NoFoundFile -> Log.e("Error loading font: ", "file null")
+                LoadFontState.MissingPermissions -> Toast.makeText(this@SampleActivity, "missing permissions", Toast.LENGTH_SHORT).show()
+                LoadFontState.LowDiskSpace -> Toast.makeText(this@SampleActivity, "low space in disck", Toast.LENGTH_SHORT).show()
             }
         }
     }
+    private fun applyFont(typeface:Typeface) {
+        MyText.typeface = typeface
+    }
+
 }

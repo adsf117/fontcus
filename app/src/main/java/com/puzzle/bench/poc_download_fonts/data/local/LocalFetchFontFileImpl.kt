@@ -6,16 +6,17 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Environment
 import android.os.StatFs
-import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.puzzle.bench.poc_download_fonts.domain.FetchFontState
 import com.puzzle.bench.poc_download_fonts.domain.FetchFontStatus
 import java.io.*
 
-
 class LocalFetchFontFileImpl(private var context: Context) : LocalFetchFontFile {
+
+    private val directory by lazy { context.getDir(Environment.DIRECTORY_DOCUMENTS,Context.MODE_PRIVATE) }
+
     override suspend fun fontFileExists(fontName: String): Boolean {
-        val file = File(getFontPhatName(fontName))
+        val file = File(getFontPathName(fontName))
         return file.exists()
     }
 
@@ -23,7 +24,7 @@ class LocalFetchFontFileImpl(private var context: Context) : LocalFetchFontFile 
         if (!hasPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE))) {
             return FetchFontState(null, FetchFontStatus.MissingPermissions)
         }
-        val file = File(getFontPhatName(fontName))
+        val file = File(getFontPathName(fontName))
         return FetchFontState(file)
     }
 
@@ -42,13 +43,13 @@ class LocalFetchFontFileImpl(private var context: Context) : LocalFetchFontFile 
         try {
             val stringName = "${File.separator}${fontName}"
             val futureStudioIconFile =
-                File(Environment.getExternalStorageDirectory(), stringName)
+                File(directory, stringName)
 
             var inputStream: InputStream? = null
             var outputStream: OutputStream? = null
 
             try {
-                val fileReader = ByteArray(40096)
+                val fileReader = ByteArray(4096)
                 var fileSizeDownloaded: Long = 0
 
                 inputStream = byteArray.inputStream()
@@ -75,7 +76,7 @@ class LocalFetchFontFileImpl(private var context: Context) : LocalFetchFontFile 
         }
     }
 
-    private fun getFontPhatName(fontName: String) = "/sdcard/${fontName}"
+    private fun getFontPathName(fontName: String) = "${directory.absolutePath}/${fontName}"
 
     private fun hasPermissions(permissions: Array<String>): Boolean =
         permissions.all {
@@ -83,7 +84,7 @@ class LocalFetchFontFileImpl(private var context: Context) : LocalFetchFontFile 
         }
 
     fun getAvailableInternalMemorySize(): Long {
-        val path = Environment.getDataDirectory()
+        val path = directory
         val stat = StatFs(path.path)
         val blockSize: Long
         val availableBlocks: Long
